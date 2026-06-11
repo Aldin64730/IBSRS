@@ -1,0 +1,21 @@
+# IBSRS Policy Pack
+# Modify these values without touching any code
+
+matching:
+  fuzzy_description_threshold: 0.85   # 0-1 similarity score for fuzzy matching
+  amount_tolerance_pct: 0.01          # 1% tolerance on amount differences
+  timing_window_days: 5               # Days before/after cutoff for timing differences
+
+thresholds:
+  high_value_escalation: 10000        # USD amount triggering controller escalation
+  duplicate_amount_variance: 0.00     # Exact match required for duplicate detection
+  duplicate_date_window_days: 3       # Days window for near-duplicate detection
+
+compliance:
+  sox_mode: true                      # Enforce SOX audit trail requirements
+  require_evidence_pointers: true     # Every finding must link back to source
+  privacy_mode: false                 # Mask PII in outputs
+
+regional:
+  base_currency: USD
+  fx_rounding_decimals: 4

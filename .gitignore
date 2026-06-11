@@ -1,0 +1,20 @@
+# Never commit run outputs
+runs/
+
+# Never commit real financial data
+inputs/
+*.pdf
+*.csv
+*.mt940
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
