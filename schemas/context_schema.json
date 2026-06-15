@@ -1,0 +1,62 @@
+{
+  "properties": {
+    "bundle_id": {
+      "title": "Bundle Id",
+      "type": "string"
+    },
+    "period": {
+      "title": "Period",
+      "type": "string"
+    },
+    "account": {
+      "additionalProperties": true,
+      "title": "Account",
+      "type": "object"
+    },
+    "inputs": {
+      "additionalProperties": true,
+      "title": "Inputs",
+      "type": "object"
+    },
+    "gl_mapping": {
+      "additionalProperties": true,
+      "title": "Gl Mapping",
+      "type": "object"
+    },
+    "prior_period": {
+      "additionalProperties": true,
+      "title": "Prior Period",
+      "type": "object"
+    },
+    "fee_schedule": {
+      "additionalProperties": true,
+      "title": "Fee Schedule",
+      "type": "object"
+    },
+    "fx_rates": {
+      "additionalProperties": true,
+      "title": "Fx Rates",
+      "type": "object"
+    },
+    "risk_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Risk Flags",
+      "type": "array"
+    },
+    "policy_snapshot": {
+      "additionalProperties": true,
+      "title": "Policy Snapshot",
+      "type": "object"
+    }
+  },
+  "required": [
+    "bundle_id",
+    "period",
+    "account",
+    "inputs"
+  ],
+  "title": "ContextPacket",
+  "type": "object"
+}
