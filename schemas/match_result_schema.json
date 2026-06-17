@@ -1,0 +1,80 @@
+{
+  "$defs": {
+    "MatchPair": {
+      "properties": {
+        "bank_txn": {
+          "title": "Bank Txn",
+          "type": "string"
+        },
+        "gl_entries": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gl Entries",
+          "type": "array"
+        },
+        "match_type": {
+          "enum": [
+            "1:1",
+            "1:M",
+            "M:1"
+          ],
+          "title": "Match Type",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "reference",
+            "amount_date",
+            "fuzzy_description"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "bank_txn",
+        "gl_entries",
+        "match_type",
+        "method",
+        "confidence"
+      ],
+      "title": "MatchPair",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "matched": {
+      "items": {
+        "$ref": "#/$defs/MatchPair"
+      },
+      "title": "Matched",
+      "type": "array"
+    },
+    "unmatched_bank": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unmatched Bank",
+      "type": "array"
+    },
+    "unmatched_gl": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unmatched Gl",
+      "type": "array"
+    },
+    "summary": {
+      "additionalProperties": true,
+      "title": "Summary",
+      "type": "object"
+    }
+  },
+  "title": "MatchResult",
+  "type": "object"
+}
