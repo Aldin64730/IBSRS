@@ -1,0 +1,77 @@
+{
+  "properties": {
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "type": {
+      "title": "Type",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "confidence": {
+      "title": "Confidence",
+      "type": "number"
+    },
+    "txn_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Txn Ids",
+      "type": "array"
+    },
+    "gl_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gl Ids",
+      "type": "array"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "recommended_action": {
+      "title": "Recommended Action",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "agent": {
+      "title": "Agent",
+      "type": "string"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "finding_id",
+    "type",
+    "severity",
+    "confidence",
+    "summary",
+    "recommended_action",
+    "agent"
+  ],
+  "title": "Finding",
+  "type": "object"
+}
