@@ -19,3 +19,9 @@ compliance:
 regional:
   base_currency: USD
   fx_rounding_decimals: 4
+
+llm:
+  model: gpt-5.4                 # OpenAI model for narration / extraction
+  use_for_pdf_extraction: false  # Agent B: LLM rescue when pdfplumber can't
+                                 # table-parse a PDF (verified by balance check).
+                                 # Env override: IBSRS_LLM_PDF_EXTRACTION=1
