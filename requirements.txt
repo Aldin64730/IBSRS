@@ -1,5 +1,14 @@
+# Core (required)
 openai>=1.0.0
 pydantic>=2.0.0
 pyyaml>=6.0
-pandas>=2.0.0
 python-dotenv>=1.0.0
+
+# Optional — agents degrade gracefully if these are absent
+rapidfuzz>=3.0.0      # Agent C/E fuzzy matching (falls back to stdlib difflib)
+pdfplumber>=0.10.0    # Agent B born-digital PDF parsing (falls back to synthetic)
+pandas>=2.0.0         # convenience for analysis / future UI
+
+# UI + tests (later commits)
+streamlit>=1.30.0
+pytest>=8.0.0
