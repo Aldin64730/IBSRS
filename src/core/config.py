@@ -46,11 +46,7 @@ class Config:
         self.openai_api_key = os.environ.get("OPENAI_API_KEY", "").strip()
         self.openai_model = os.environ.get(
             "OPENAI_MODEL",
-            self.policy.get("llm", {}).get("model", "gpt-4o-mini"),
-        )
-        # Force deterministic offline narration (no token spend) when set truthy.
-        self.llm_offline = os.environ.get("IBSRS_LLM_OFFLINE", "").strip().lower() in (
-            "1", "true", "yes", "on",
+            self.policy.get("llm", {}).get("model", "gpt-5.4"),
         )
         self.cache_dir = ROOT / ".cache" / "llm"
 
